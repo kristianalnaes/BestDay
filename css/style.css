@@ -1,0 +1,83 @@
+html  {
+	background: url(../img1.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#header  {
+	background-color: #f1f1f1;
+	text-align: center;
+	width:75%;
+	height:25%;
+	margin-left: auto;
+	margin-right: auto;
+	border:2px;
+	border-radius:25px;
+}
+#bdj  {
+	position: relative;
+	top: 30px
+}
+#intro  {
+	position: relative;
+	top: 18px;
+}
+
+#startbtn  {
+	position: relative;
+	top:50px;
+}
+#journal  {
+	background-color: #f1f1f1;
+	border:2px;
+	border-radius:25px;
+	width:75%;
+	height:65%;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	top: 5px;
+	text-align: center;
+}
+#jtop  {
+	height: 50%;
+	background-color: #FFFF66;
+}
+#jbottom  {
+	height: 50%;
+}
+
+
+
+
+
+
+
+
+/*#good_day {
+	width:200px; 
+	height:100px;
+}
+
+#sday {
+	position: relative;
+	left: 55px;
+}
+
+#main_space {
+	background-color: #0000ff;
+	height:900px;
+	width: 850px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align: center;
+}
+#output {
+	height:250px;
+	width:75%;
+	background-color:white;
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+}
