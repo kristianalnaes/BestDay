@@ -29,7 +29,7 @@ html  {
 	top:50px;
 }
 #journal  {
-	background-color: #f1f1f1;
+	background-color: #ededed;
 	border:2px;
 	border-radius:25px;
 	width:75%;
@@ -42,42 +42,11 @@ html  {
 }
 #jtop  {
 	height: 50%;
-	background-color: #FFFF66;
 }
 #jbottom  {
 	height: 50%;
 }
-
-
-
-
-
-
-
-
-/*#good_day {
-	width:200px; 
-	height:100px;
-}
-
-#sday {
+#counter  {
 	position: relative;
-	left: 55px;
-}
-
-#main_space {
-	background-color: #0000ff;
-	height:900px;
-	width: 850px;
-	margin-left:auto;
-	margin-right:auto;
-	text-align: center;
-}
-#output {
-	height:250px;
-	width:75%;
-	background-color:white;
-	position: relative;
-	margin-right: auto;
-	margin-left: auto;
+	right:550px;
 }
