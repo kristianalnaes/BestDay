@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	
 </head>
-<body>
+<body ng-controller="bdctrl">
 		<div id="header">
 			<p id="bdj"><h1>Best Day Journal</h1></p>
 			<p id="intro">Keep your good days with you.</p>
@@ -19,9 +19,9 @@
 			<div id="jtop">
 				<h3>Describe your best day. Give it a date. Hit submit.</h3> <br />
 					<div>
-						<input type="text" id="describe" ng-model="desc" placeholder="Description.."></input>
-						<input type="text" id="describe" ng-model="date" placeholder="mm/dd/yyyy"></input> <br />
-						<button class="pure-button pure-button-primary" id="subbutton" ng-click="addDay()">Submit</button>
+						<input type="text" id="describe" ng-model="newDay.day" placeholder="Description.."></input>
+						<input type="text" id="describe" ng-model="newDay.date" placeholder="mm/dd/yyyy"></input> <br />
+						<button class="pure-button pure-button-primary" ng-click="addDay()">Submit</button>
 							<div>
 								<h2>Example:</h2> <br />
 								<h3>Fell in love with a stripper - 03/15/2003</h3>
@@ -30,12 +30,11 @@
 			</div>
 			<div id="jbottom">
 				<p id="counter">Number of days:</p> <br />
-					<div id="all_dates">
+					<div id="thelist">
 						<ul>
-            				<li id="list" ng-repeat="day in dayList">{{day.day}} - {{day.date}}</li>
-       					 </ul>
-					</div>
-
+            				<li id="allthedays" ng-repeat="day in daylist">{{ day.day }} - {{ day.date }}</li>
+       					</ul>
+       				</div>	
 			</div>
 		</div>
 		

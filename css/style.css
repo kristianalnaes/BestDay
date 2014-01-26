@@ -46,6 +46,9 @@ html  {
 #jbottom  {
 	height: 50%;
 }
+#allthedays  {
+	list-style: none;
+}
 #counter  {
 	position: relative;
 	right:550px;
