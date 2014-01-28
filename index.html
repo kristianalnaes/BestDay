@@ -1,6 +1,7 @@
 <html ng-app="best_day">
 <head>
 	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 	<title>Best Days</title>
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
@@ -10,7 +11,7 @@
 <body ng-controller="bdctrl">
 		<div id="header">
 			<p id="bdj"><h1>Best Day Journal</h1></p>
-			<p id="intro">Keep your good days with you.</p>
+			<p id="intro">A friendly way of remembering a great day you have had in the past. Or a horrible day. I guess that is up to you</p>
 				<div>
 					<button id="startbtn" ng-click="showJournal = ! showJournal" class="pure-button pure-button-primary">Get Journaling!</button>
 				</div>
@@ -21,7 +22,8 @@
 					<div>
 						<input type="text" id="describe" ng-model="newDay.day" placeholder="Description.."></input>
 						<input type="text" id="describe" ng-model="newDay.date" placeholder="mm/dd/yyyy"></input> <br />
-						<button class="pure-button pure-button-primary" ng-click="addDay()">Submit</button>
+						<button ng-value="gday" class="pure-button pure-button-primary" ng-click="addDay()">Good Day</button>
+						<button ng-value="bday" class="pure-button pure-button-primary" ng-click="addDay()">Bad Day</button>
 							<div>
 								<h2>Example:</h2> <br />
 								<h3>Fell in love with a stripper - 03/15/2003</h3>
@@ -32,7 +34,7 @@
 				<p id="counter">Number of days:</p> <br />
 					<div id="thelist">
 						<ul>
-            				<li id="allthedays" ng-repeat="day in daylist">{{ day.day }} - {{ day.date }}</li>
+            				<h3><li id="allthedays" ng-style="colorPick()" ng-repeat="day in daylist">{{ day.day }} - {{ day.date }}</li></h3>
        					</ul>
        				</div>	
 			</div>

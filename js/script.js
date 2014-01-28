@@ -16,5 +16,5 @@ best_day.controller('bdctrl', function ($scope) {
  			date: $scope.newDay.date
  		});
  	};
-
  });
+
