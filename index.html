@@ -1,7 +1,8 @@
 <html ng-app="best_day">
 <head>
-	<script type="text/javascript" src="js/angular.min.js"></script>
-	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js'></script>
+    <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+	<script src='https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js'></script>
 	<script type="text/javascript" src="js/script.js"></script>
 	<title>Best Days</title>
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
@@ -22,23 +23,21 @@
 					<div>
 						<input type="text" id="describe" ng-model="newDay.day" placeholder="Description.."></input>
 						<input type="text" id="describe" ng-model="newDay.date" placeholder="mm/dd/yyyy"></input> <br />
-						<button ng-value="gday" class="pure-button pure-button-primary" ng-click="addDayGood()">Good Day</button>
-						<button ng-value="bday" class="pure-button pure-button-primary" ng-click="addDayBad()">Bad Day</button>
+						<button class="pure-button pure-button-primary" ng-click="addDayGood()">Good Day</button>
+						<button class="pure-button pure-button-primary" ng-click="addDayBad()">Bad Day</button>
 							<div>
 								<h2>Example:</h2> <br />
 							</div>
-					</div>
-			</div>
+					</div			</div>
 			<div id="jbottom">
 				<p id="counter">Number of days:</p> <br />
 					<div id="thelist">
 						<ul>
-            				<h3><li id="allthedays" ng-class="{good: isGood, bad: isBad}" ng-repeat="day in daylist">{{ day.day }} - {{ day.date }}</li></h3>
+            				<h3><li id="allthedays" ng-class="{good: isGood}" ng-repeat="day in daylist">{{ day.day }} - {{ day.date }}</li></h3>
+            				
        					</ul>
        				</div>	
 			</div>
 		</div>
-		
-
 </body>
 </html>

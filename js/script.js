@@ -1,9 +1,12 @@
-var best_day = angular.module('best_day', []);
+var best_day = angular.module('best_day', ["firebase"]);
 
 
 
-best_day.controller('bdctrl', function ($scope) {
- 	$scope.daylist = [
+function bdctrl($scope, $firebase) {
+	var wordJournal = new Firebase('https://quickjournal.firebaseIO.com');
+	$scope.entries = $firebase(wordJournal);
+
+	$scope.daylist = [
  		{ 
  			day: 'This is an example', 
  			date: '11/18/1990' 
@@ -12,6 +15,7 @@ best_day.controller('bdctrl', function ($scope) {
 
  	$scope.isGood = false;
  	$scope.isBad = false;
+ 	$scope.arrayCounter = 0;
 
  	$scope.addDayGood = function () {
  		$scope.daylist.push(
@@ -31,5 +35,5 @@ best_day.controller('bdctrl', function ($scope) {
  		$scope.isGood = false;
  		$scope.isBad = true;
  	};
- });
+};
 
