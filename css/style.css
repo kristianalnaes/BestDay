@@ -53,3 +53,9 @@ html  {
 	position: relative;
 	right:550px;
 }
+.good  {
+	color:green;
+}
+.bad  {
+	color:red;
+}
