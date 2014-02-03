@@ -1,9 +1,9 @@
-<html ng-app="best_day">
+<html ng-app="bestDay">
 <head>
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js'></script>
     <script src='https://cdn.firebase.com/v0/firebase.js'></script>
-	<script src='https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js'></script>
-	<script type="text/javascript" src="js/script.js"></script>
+    <script src='https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
 	<title>Best Days</title>
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -17,22 +17,26 @@
 					<button id="startbtn" ng-click="showJournal = ! showJournal" class="pure-button pure-button-primary">Get Journaling!</button>
 				</div>
 		</div>
-		<div id="journal" <!--ng-show="showJournal"-->>
+		<div id="journal" ng-show="showJournal" >
 			<div id="jtop">
 				<h3>Describe your best day. Give it a date. Hit submit.</h3> <br />
 					<div>
-						<input type="text" id="describe" ng-model="newDay.day" placeholder="Description.."></input>
+						<input type="text" id="describe" ng-model="newDay.desc" placeholder="Description.."></input>
 						<input type="text" id="describe" ng-model="newDay.date" placeholder="mm/dd/yyyy"></input> <br />
-						<button class="pure-button pure-button-primary" ng-click="addDayGood()">Good Day</button>
-						<!--<button class="pure-button pure-button-primary" ng-click="addDayBad()">Bad Day</button> -->
+						<button class="pure-button pure-button-primary" ng-click="addDayGood()">Add Entry</button>
 							<div>
 								<h2>Example:</h2> <br />
+                                <h3>The day that I fell in love with my stripper, Sandy. - 11/18/1990</h3>
 							</div>
 					</div			</div>
 			<div id="jbottom">
-				<p id="counter">Number of days:</p> <br />
+                <div id="counter">
+			        <p>Number of days</p> <br />
+                        <div id="gCount" > {{$scope.listNum}}</div>
+                </div>
 					<div class="thelist" ng-repeat="day in daylist">
-            				<h3><span> <!-- id="allthedays" ng-class="{good: isGood}" --> {{ day.day }} - {{ day.date }}</span></h3>
+            				<h3><span ng-mouseenter="deleteShow()" ng-mouseleave="deleteHide()" >{{ day.desc }} - {{ day.date }}<button id="removeDay" ng-click="removeDay()" ng-show="removeShow">Delete</button> </span></h3>
+
        				</div>	
 			</div>
 		</div>
