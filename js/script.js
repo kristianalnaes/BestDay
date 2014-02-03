@@ -1,21 +1,26 @@
-angular.module('bestDay', ["firebase"])
-    .controller("bdctrl", ["$scope", "$firebase",
-        function($scope, $firebase) {
-            var ref = new Firebase("https://quickjournal.firebaseIO.com");
-            $scope.daylist = $firebase(ref);
-            $scope.addDayGood = function() {
-                var newPushRef = $scope.daylist.push();
+ngular.module('bestDay', ["firebase"])
+    .controller("bdctrl", ['$scope', '$firebase',
+        function($scope,$firebase) {
+            var daysRef = new Firebase("https://quickjournal.firebaseIO.com/daylist/");
+            $scope.dayList = $firebase(daysRef);
+            $scope.dayLocationInFirebase = daysRef.push();
+            $scope.addDayGood = function(){
+                                  // Setdata to the generated location
+                                  $scope.dayLocationInFirebase.set({
+                                                     desc: $scope.newDay.desc,
+                                                     date: $scope.newDay.date
+                                                 });
 
-                newPushRef.set({
-                    desc: $scope.newDay.desc,
-                    date: $scope.newDay.date
-                });
-                $scope.newDay.desc = "";
-                $scope.newDay.date = "";
-            };
+                                  //holds reference to location the object was pushed to, for direct manipulation of the value. Pass it to the scope or an array if you need it for later
+                                  var pushedName = $scope.dayLocationInFirebase.name();
+                                   alert(pushedName);
+                                  $scope.newDay.desc = "";
+                                  $scope.newDay.date = "";
+                              }
+            
+            
         }
     ]);
-
 
 
    /* .controller("bdctrl", ["$scope", "$GreatService", "$firebase", function($scope, $firebase, $service) {
